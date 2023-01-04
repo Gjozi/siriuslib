@@ -2,12 +2,9 @@ package sk.gravicon.siriuslib;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.TextField;
-/*
 
- * */
 
 /**
- * @author gonczol
  * JavaFX textové pole pre desatinné čísla. V fxml súbore aj scenebuildery je možné nastaviť
  * mask napr. ####.##
  * Ako desatinná čiarka sa používa bodka,

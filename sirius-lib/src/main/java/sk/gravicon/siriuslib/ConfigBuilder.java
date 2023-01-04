@@ -1,4 +1,4 @@
-package sk.gravicon.sirius_lib;
+package sk.gravicon.siriuslib;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ public class ConfigBuilder {
 		try {
 			config = configs.properties(new File(fileName));
 		} catch (ConfigurationException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		
@@ -35,20 +35,5 @@ public class ConfigBuilder {
 		return config;
 	}
 	
-
-//	public  ConfigApp getCa() {
-//		return ca;
-//	}
-
-
-	
-//	public ConfigValues getConfigValues() {
-//		this.loadValues();
-//		return configValues;
-//	}
-//	
-//	private void loadValues() {
-//		configValues.loadConfig(getConfig());
-//	}
 }
 

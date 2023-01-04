@@ -1,4 +1,4 @@
-package sk.gravicon.sirius_lib;
+package sk.gravicon.siriuslib;
 
 /**
  * Hello world!

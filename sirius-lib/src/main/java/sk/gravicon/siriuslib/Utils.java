@@ -1,4 +1,4 @@
-package sk.gravicon.sirius_lib;
+package sk.gravicon.siriuslib;
 
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.datasource.DataSourceBuilder;

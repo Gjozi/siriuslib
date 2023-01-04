@@ -7,7 +7,7 @@
 
 	<groupId>sk.gravicon</groupId>
 	<artifactId>sirius-lib</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<name>sirius-lib</name>
 	<!-- FIXME change it to the project's website -->

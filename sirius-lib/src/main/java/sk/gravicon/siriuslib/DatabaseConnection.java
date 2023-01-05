@@ -5,13 +5,13 @@ import org.apache.cayenne.datasource.DataSourceBuilder;
 import org.apache.commons.configuration2.Configuration;
 //import org.slf4j.Logger;
 
-public class DatabaseConnector {
-	private final static DatabaseConnector INSTANCE = new DatabaseConnector();
+public class DatabaseConnection {
+	private final static DatabaseConnection INSTANCE = new DatabaseConnection();
 	private static Configuration config;
 	private String dbUrl;
 	private String dbType;
 	private ServerRuntime cayenneRuntime;
-	private DatabaseConnector() {
+	private DatabaseConnection() {
 		super();
 	}
 	private void setDatabase() {
@@ -35,13 +35,13 @@ public class DatabaseConnector {
 		}
 	}
 	
-	public  DatabaseConnector getConnector(Configuration config) {
-		DatabaseConnector.config=config;
+	public  DatabaseConnection getConnection(Configuration config) {
+		DatabaseConnection.config=config;
 		setDatabase();
 		return INSTANCE;
 	}
 
-	public static  DatabaseConnector builder() {
+	public static  DatabaseConnection builder() {
 		return INSTANCE;
 	}
 

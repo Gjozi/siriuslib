@@ -41,7 +41,7 @@ public class DatabaseConnector {
 		return INSTANCE;
 	}
 
-	public static  DatabaseConnector getInstance() {
+	public static  DatabaseConnector builder() {
 		return INSTANCE;
 	}
 

@@ -8,17 +8,15 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 
 
 
-public class ConfigBuilder {
-	private static ConfigBuilder ca = null;
+public class ConfigFactory {
+	private static ConfigFactory ca = null;
 	private static Configuration config;
-	//private ConfigValues configValues= new ConfigValues();
-	
-	private ConfigBuilder() {
+	private ConfigFactory() {
 	}
 
-	public static ConfigBuilder getInstance(String fileName) {
+	public static ConfigFactory getInstance(String fileName) {
 		if (ca == null) {
-			ca = new ConfigBuilder();
+			ca = new ConfigFactory();
 		}
 		Configurations configs = new Configurations();
 		try {
@@ -31,7 +29,7 @@ public class ConfigBuilder {
 		// access configuration properties
 		return ca;
 	}
-	public  Configuration getConfig() {
+	public Configuration getConfig() {
 		return config;
 	}
 	

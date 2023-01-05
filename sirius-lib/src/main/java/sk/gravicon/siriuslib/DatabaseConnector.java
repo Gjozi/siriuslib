@@ -3,42 +3,18 @@ package sk.gravicon.siriuslib;
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.datasource.DataSourceBuilder;
 import org.apache.commons.configuration2.Configuration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
 
-
-
-
-public class Utils {
-	private final String VERSION = "sirius-lib.Utils version: 0.0.1";
-	private final static Utils INSTANCE = new Utils();
-	private Logger logger;
-	private Configuration config;
+public class DatabaseConnector {
+	private final static DatabaseConnector INSTANCE = new DatabaseConnector();
+	private static Configuration config;
 	private String dbUrl;
 	private String dbType;
-
-	private Utils() {
+	private ServerRuntime cayenneRuntime;
+	private DatabaseConnector() {
 		super();
 	}
-
-	private ServerRuntime cayenneRuntime;
-	/**
-	 * @return the cayenneRuntime
-	 */
-	public ServerRuntime getCayenneRuntime() {
-		return cayenneRuntime;
-	}
-
-
-
-	public static Utils getInstance() {
-		return INSTANCE;
-	}
-	public String getVersion() 
-	{ 
-		return VERSION;
-	}
-	public void setDatabase() {
+	private void setDatabase() {
 		String username = config.getString("database.username");
 		String pwd = config.getString("database.pwd");
 		dbType = config.getString("database.type");
@@ -58,25 +34,18 @@ public class Utils {
 					.build();
 		}
 	}
-	public Utils setUtilParams(UtilParams params) {
-		config = params.getConfig();
-		logger= params.getLogger();
-		logger.info("Utils instance initialized");
+	
+	public  DatabaseConnector getConnector(Configuration config) {
+		DatabaseConnector.config=config;
+		setDatabase();
 		return INSTANCE;
 	}
-	
-	public String getDbUrl() {
-		return dbUrl;
-	}
-	public String getDbType() {
-		return dbType;
-	}
-	public Logger getLogger() {
-		return logger;
+
+	public static  DatabaseConnector getInstance() {
+		return INSTANCE;
 	}
 
-
-
-
-	
+	public ServerRuntime getCayenneRuntime() {
+		return cayenneRuntime;
+	}
 }

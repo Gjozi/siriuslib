@@ -48,4 +48,12 @@ public class DatabaseConnection {
 	public ServerRuntime getCayenneRuntime() {
 		return cayenneRuntime;
 	}
+	
+	public String getDbType() {
+		return dbType;
+	}
+	public String getDbUrl() {
+		return dbUrl;
+	}
 }
+

@@ -1,6 +1,7 @@
 package sk.gravicon.siriuslib;
 
 import java.io.File;
+import java.util.Objects;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
@@ -15,7 +16,7 @@ public class ConfigFactory {
 	}
 
 	public static ConfigFactory getInstance(String fileName) {
-		if (ca == null) {
+		if (Objects.isNull(ca)) {
 			ca = new ConfigFactory();
 		}
 		Configurations configs = new Configurations();
